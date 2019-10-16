@@ -24,6 +24,8 @@
        </div>
        <br />
        <div class="result"><p>X beats Y</p></div>
+       <br />
+       <div class="display"><p>Please choose between Rock, Paper and Scissors</p></div>
      
    </body>
    <script>
@@ -35,6 +37,7 @@ var rock_choice = document.getElementById("rock");
 var paper_choice = document.getElementById("paper");
 var scissors_choice = document.getElementById("scissors");
 var result = document.querySelector("div.result > p");
+var display = document.querySelector("div.display >p")
 
 
 function computerTurn() {
@@ -46,8 +49,8 @@ function computerTurn() {
 computerTurn();
 
 
-  function userTurn(userChoice) {
-    var computerChoice = computerTurn();
+        function userTurn(userChoice) {
+        var computerChoice = computerTurn();
 
        if(userChoice == "rock" && computerChoice == "scissors" || userChoice == "paper" && computerChoice == "rock" || userChoice == "scissors" && computerChoice == "paper") {
 
@@ -76,10 +79,12 @@ computerTurn();
             result.innerHTML = " It is a tie ";
        }
       
-}
-userTurn();
+    }
+    userTurn();
 
    function userClick() {
+       countdown();
+      
        rock_choice.addEventListener('click', function() {
        userTurn("rock");
        })
@@ -93,5 +98,13 @@ userTurn();
   
    userClick();
 
+
+    function countdown() {
+        setTimeout(function(){ 
+            alert("Please choose"); 
+            }, 1000);
+        }
+
+   
    </script>
 </html>
